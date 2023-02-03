@@ -1,0 +1,132 @@
+/* font-family: 'Fraunces', serif; 700
+font-family: 'Montserrat', sans-serif; 500;700*/
+
+:root {
+  --cream: hsl(32, 41%, 84%);
+  --dark-cyan: hsl(158, 36%, 37%);
+  --very-dark-cyan :   hsl(159, 47%, 17%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  display: flex;
+  width: 40%;
+  min-width: 250px;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.image-section{
+  width: 50%;
+}
+
+.image-section img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.description-section {
+  width: 50%;
+  padding: 30px;
+  border-radius: 0 10px 10px 0;
+}
+
+.description-section p {
+  color: var(--dark-grayish-blue);
+  margin: 10px auto;
+}
+
+.description-section h1 {
+  font-size: 24px;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+
+.price-section {
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.price-section h3 {
+  color: var(--dark-cyan);
+  margin-right: 5px;
+  font-size: 24px;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+
+.price-section small {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: var(--dark-grayish-blue);
+
+}
+
+.btn {
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: var(--dark-cyan);
+  align-self: center;
+  transition: background-color ease-in-out 0.6s ,border-color ease-in-out 0.6s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--very-dark-cyan);
+  border-color: var(--very-dark-cyan);
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-section img {
+    border-radius: 10px 10px 0 0;
+    background-image: url(./images/image-product-mobile.jpg);
+    width: 100%;
+  }
+
+  .description-section {
+    width: 100%;
+  }
+}
+
+.attribution {
+  position: absolute;
+  align-self: flex-end;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
