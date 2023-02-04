@@ -4,7 +4,7 @@ font-family: 'Montserrat', sans-serif; 500;700*/
 :root {
   --cream: hsl(32, 41%, 84%);
   --dark-cyan: hsl(158, 36%, 37%);
-  --very-dark-cyan :   hsl(159, 47%, 17%);
+  --very-dark-cyan: hsl(159, 47%, 17%);
   --very-dark-blue: hsl(212, 21%, 14%);
   --dark-grayish-blue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
@@ -32,16 +32,17 @@ body {
 .container {
   display: flex;
   width: 40%;
-  min-width: 250px;
+  min-width: 420px;
+  max-width: 500px;
   background-color: var(--white);
   border-radius: 10px;
 }
 
-.image-section{
+.image-section {
   width: 50%;
 }
 
-.image-section img{
+.image-section img {
   width: 100%;
   height: 100%;
   border-radius: 10px 0 0 10px;
@@ -49,8 +50,12 @@ body {
 
 .description-section {
   width: 50%;
-  padding: 30px;
+  padding: 20px;
   border-radius: 0 10px 10px 0;
+}
+
+.space {
+  letter-spacing: 5px;
 }
 
 .description-section p {
@@ -67,6 +72,7 @@ body {
 .price-section {
   max-width: 250px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 30px 0;
 }
@@ -84,7 +90,6 @@ body {
   justify-content: center;
   align-self: center;
   color: var(--dark-grayish-blue);
-
 }
 
 .btn {
@@ -95,7 +100,7 @@ body {
   border-radius: 10px;
   border-color: var(--dark-cyan);
   align-self: center;
-  transition: background-color ease-in-out 0.6s ,border-color ease-in-out 0.6s;
+  transition: background-color ease-in-out 0.6s, border-color ease-in-out 0.6s;
 }
 
 .btn:hover {
@@ -104,19 +109,38 @@ body {
   border-color: var(--very-dark-cyan);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 420px) {
+  body {
+    height: 100vh;
+  }
   .container {
     flex-direction: column;
+    min-width: 250px;
+    width: 90vw;
+    margin: auto;
+  }
+
+  .image-section {
+    width: 100%;
+    height: 240px;
   }
 
   .image-section img {
     border-radius: 10px 10px 0 0;
     background-image: url(./images/image-product-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    image-rendering: optimizeQuality;
     width: 100%;
   }
 
   .description-section {
     width: 100%;
+    height: 75%;
+  }
+
+  .attribution {
+    visibility: hidden;
   }
 }
 
